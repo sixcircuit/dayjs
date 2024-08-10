@@ -20,5 +20,7 @@ coverage
 /index.d.ts
 locale.json
 
+out/
+
 #dev
 demo.js

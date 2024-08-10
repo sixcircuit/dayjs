@@ -1,0 +1,53 @@
+#!/bin/bash
+npm run build
+echo "exports.bundle = function(_, _opts){" > ./out/dayjs.dry.js
+
+cat ./out/dayjs.js >> ./out/dayjs.dry.js
+
+echo "" >> ./out/dayjs.dry.js
+cat ./plugin/utc.js >> ./out/dayjs.dry.js
+echo "dayjs.extend(dayjs_plugin_utc);" >> ./out/dayjs.dry.js
+
+echo "" >> ./out/dayjs.dry.js
+cat ./plugin/timezone.js >> ./out/dayjs.dry.js
+echo "dayjs.extend(dayjs_plugin_timezone);" >> ./out/dayjs.dry.js
+
+echo "" >> ./out/dayjs.dry.js
+cat ./plugin/duration.js >> ./out/dayjs.dry.js
+echo "dayjs.extend(dayjs_plugin_duration);" >> ./out/dayjs.dry.js
+
+echo "" >> ./out/dayjs.dry.js
+cat ./plugin/dayOfYear.js >> ./out/dayjs.dry.js
+echo "dayjs.extend(dayjs_plugin_dayOfYear);" >> ./out/dayjs.dry.js
+
+echo "" >> ./out/dayjs.dry.js
+cat ./plugin/weekOfYear.js >> ./out/dayjs.dry.js
+echo "dayjs.extend(dayjs_plugin_weekOfYear);" >> ./out/dayjs.dry.js
+
+echo "" >> ./out/dayjs.dry.js
+cat ./plugin/quarterOfYear.js >> ./out/dayjs.dry.js
+echo "dayjs.extend(dayjs_plugin_quarterOfYear);" >> ./out/dayjs.dry.js
+
+echo "" >> ./out/dayjs.dry.js
+cat ./plugin/advancedFormat.js >> ./out/dayjs.dry.js
+echo "dayjs.extend(dayjs_plugin_advancedFormat);" >> ./out/dayjs.dry.js
+
+echo "" >> ./out/dayjs.dry.js
+cat ./plugin/objectSupport.js >> ./out/dayjs.dry.js
+echo "dayjs.extend(dayjs_plugin_objectSupport);" >> ./out/dayjs.dry.js
+
+echo "" >> ./out/dayjs.dry.js
+cat ./plugin/relativeTime.js >> ./out/dayjs.dry.js
+echo "dayjs.extend(dayjs_plugin_relativeTime);" >> ./out/dayjs.dry.js
+echo "" >> ./out/dayjs.dry.js
+
+echo "" >> ./out/dayjs.dry.js
+cat ./plugin/toObject.js >> ./out/dayjs.dry.js
+echo "dayjs.extend(dayjs_plugin_toObject);" >> ./out/dayjs.dry.js
+echo "" >> ./out/dayjs.dry.js
+
+echo "" >> ./out/dayjs.dry.js
+echo "_.dayjs = dayjs;" >> ./out/dayjs.dry.js
+echo '_.dayjs.version = "1.11.12";' >> ./out/dayjs.dry.js
+echo "" >> ./out/dayjs.dry.js
+echo "}" >> ./out/dayjs.dry.js

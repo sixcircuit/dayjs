@@ -12,18 +12,19 @@ module.exports = (config) => {
       plugins: [
         babel({
           exclude: 'node_modules/**'
-        }),
-        terser()
+        })
+        //,terser()
       ]
     },
     output: {
       file: fileName,
-      format: 'umd',
+      //format: 'umd',
+      format: 'iife',
       name: name || 'dayjs',
       globals: {
         dayjs: 'dayjs'
-      },
-      compact: true
+      }
+      //,compact: true
     }
   }
 }
